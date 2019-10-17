@@ -1,0 +1,7 @@
+.foot-list {
+  list-style-type: none;
+}
+
+.foot-list a {
+  color: inherit;
+}
