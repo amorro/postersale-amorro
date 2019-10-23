@@ -1,0 +1,42 @@
+[
+  {
+    "id" : 1,
+    "title" : "Ster Guers",
+    "duration" : "2",
+    "director" : "Georgious Lucas",
+    "genre" : "Action",
+    "actor" : "Mark Hamilton",
+    "img" : "https://images-na.ssl-images-amazon.com/images/I/81WjGytz7HL._SY445_.jpg",
+    "price" : "30"
+  },
+  {
+    "id" : 2,
+    "title" : "El sexto sentido",
+    "duration" : "2",
+    "director" : "M. Night Shyamalan",
+    "genre" : "Drama",
+    "actor" : "Mark Hamilton",
+    "img" : "",
+    "price" : "30"
+  },
+  {
+    "id" : 3,
+    "title" : "Pulp Fiction",
+    "duration" : "2",
+    "director" : "Tarantino",
+    "genre" : "Acción",
+    "actor" : "Mark Hamilton",
+    "img" : "",
+    "price" : "30"
+  },
+  {
+    "id" : 4,
+    "title" : "Todo Sobre Mi Madre",
+    "duration" : "2",
+    "director" : "Almodobar",
+    "genre" : "Drama",
+    "actor" : "Mark Hamilton",
+    "img" : "",
+    "price" : "30"
+  }
+]
