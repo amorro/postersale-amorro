@@ -57,8 +57,8 @@ function printFilms(data) {
 }
 
 function printSeries(data) {
-  $('#series-tab');
-  $.each(data, function(key, val){
+  document.querySelector('#series-tab');
+  data.forEach(function(val){
     let currentFilm = val;
     let card = `
                 <div class="card col-3" style="width: 18rem;">
@@ -72,7 +72,7 @@ function printSeries(data) {
                   </div>
                 </div>
                 `;
-                $('#cardSeries').append(card);
+                document.querySelector('#cardSeries').innerHTML+=card;
   });
 }
 
