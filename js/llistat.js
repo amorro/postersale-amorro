@@ -16,6 +16,7 @@ $('#series-tab').click(function() {
 
 function compra(id, nombre, precio) {
   $("#txt-title").html("Póster: " + nombre);
+  $("#txt-price").html("Precio: ");
   getTotal(precio)
   $("#modal-message").modal("show");
 }
