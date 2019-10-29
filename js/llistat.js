@@ -1,5 +1,6 @@
 $(function() {
   getFilms();
+  getXml();
   $('#cardFilms').show();
   $('#cardSeries').hide();
 });
@@ -14,18 +15,15 @@ $('#series-tab').click(function() {
   $('#cardSeries').show();
 })
 
+
 function compra(id, nombre, precio) {
   $("#txt-title").html("Póster: " + nombre);
-  $("#txt-price").html("Precio: ");
-  getTotal(precio)
-  $("#modal-message").modal("show");
-}
-
-function getTotal(precio) {
-  $('#cantidad').on('change', function() {
-    let total = this.value * precio;
-    $("#txt-price").html("Precio: " + total);
+  $("#cantidad").val(1);
+  $("#txt-price").html("Precio: " + precio + "€");
+  $('#cantidad').change(function() {
+    $("#txt-price").html("Precio: " + ($('#cantidad').val() * precio) + "€");
   });
+  $("#modal-message").modal("show");
 }
 
 
@@ -33,10 +31,49 @@ function getFilms() {
   $.getJSON('./js/films.json', function(data) {
     json = data.video;
     printFilms(json.films);
-    printSeries(json.series);
+    //printSeries(json.series);
   });
 }
 
+function getXml() {
+  $.ajax({
+    type: "GET",
+    url: "./js/series.xml",
+    dataType: "xml",
+    success: function(xml) {
+      printXmlJson(xml);
+    },
+    error: function() {
+      alert("error no se han podido leer los datos");
+    }
+  })
+}
+
+function printXmlJson(xml) {
+  let listSeries = [];
+  $(xml).find('serie').each(function() {
+    let serie = {
+      "id": $(this).attr("id"),
+      "name": $(this).attr("name"),
+      "genre": $(this).find('genre').text(),
+      "director": $(this).find('director').text(),
+      "seasons": $(this).find('seasons').text(),
+      "cover": $(this).find('cover').text(),
+      "price": $(this).find('price').text(),
+      "sinopsis": $(this).find('sinopsis').text(),
+      "stars": ""
+    };
+
+    let lStars = [];
+    $(this).find('star').each(function(){
+      lStars.push({"character":$(this).attr('character'), "name":$(this).text()});
+    });
+    serie.stars=lStars;
+
+    listSeries.push(serie);
+  });
+  printSeries(listSeries);
+}
 
 const printStars = function(listStars) {
   let listaStars = "";

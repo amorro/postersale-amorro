@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<series>
+      <serie id="4" name="Chernobyl">
+         <cover>https://images-na.ssl-images-amazon.com/images/I/61lyQU5e3YL._SL1024_.jpg</cover>
+         <director>Craig Mazin</director>
+         <genre>Drama</genre>
+         <price>50</price>
+         <seasons>2</seasons>
+         <sinopsis>undefined</sinopsis>
+         <stars>
+            <star character="Jessie">Jessie Buckley</star>
+            <star character="Constantin">Jared Harris</star>
+            <star character="Lorca">Stellan Skarsgard</star>
+         </stars>
+      </serie>
+      <serie id="5" name="Fariña">
+         <cover>https://m.media-amazon.com/images/M/MV5BZjVhN2E5N2QtNjNkNC00MDY5LWI3MGYtN2UwNDQxZDFiNDE4XkEyXkFqcGdeQXVyMTk1MzA0MjQ@._V1_.jpg</cover>
+         <director>Carlos Sedes</director>
+         <genre>Crime</genre>
+         <price>50</price>
+         <seasons>2</seasons>
+         <sinopsis>undefined</sinopsis>
+         <stars>
+            <star character="Sito Miñanco">Javier Rey</star>
+            <star character="Darío Castro">Tristán Ulloa</star>
+            <star character="Manuel Charlín">Antonio Durán</star>
+         </stars>
+      </serie>
+      <serie id="6" name="La casa de papel">
+         <cover>https://images-na.ssl-images-amazon.com/images/I/711hAiAKlSL._SL1500_.jpg</cover>
+         <director>Álex Pina</director>
+         <genre>Action</genre>
+         <price>50</price>
+         <seasons>3</seasons>
+         <sinopsis>undefined</sinopsis>
+         <stars>
+            <star character="Tokio">Úrsula Corberó</star>
+            <star character="Raquel Murillo">Itziar Ituño</star>
+            <star character="El Profesor">Álvaro Morte</star>
+         </stars>
+      </serie>
+</series>
