@@ -5,6 +5,8 @@ $(function() {
   $('#cardSeries').hide();
 });
 
+  let posterObj = {"item":[]};
+
 $('#films-tab').click(function() {
   $('#cardFilms').show();
   $('#cardSeries').hide();
@@ -17,13 +19,33 @@ $('#series-tab').click(function() {
 
 
 function compra(id, nombre, precio) {
-  $("#txt-title").html("Póster: " + nombre);
-  $("#cantidad").val(1);
-  $("#txt-price").html("Precio: " + precio + "€");
-  $('#cantidad').change(function() {
-    $("#txt-price").html("Precio: " + ($('#cantidad').val() * precio) + "€");
+  $("#txt-title").val(nombre);
+  $("#txt-cantidad").val(1);
+  $("#txt-price").val(precio + "€");
+  $('#txt-cantidad').change(function() {
+    $("#txt-price").val(($('#txt-cantidad').val() * precio) + "€");
   });
   $("#modal-message").modal("show");
+}
+
+
+function addCart() {
+  if (typeof(Storage) == "undefined") {
+    alert("LocalStorage no soportado")
+  } else {
+    //let posterId = document.getElementById('txtId').value;
+    let posterName = document.getElementById('txt-title').value;
+    let posterCantidad = document.getElementById('txt-cantidad').value;
+    let posterPrice = document.getElementById('txt-price').value;
+    
+    posterObj.item.push({
+      "name": posterName,
+      "cantidad": posterCantidad,
+      "precio": posterPrice
+    });
+    localStorage.setItem("poster", JSON.stringify(posterObj.item));
+    $("#modal-message").modal("hide");
+  }
 }
 
 
@@ -65,10 +87,13 @@ function printXmlJson(xml) {
     };
 
     let lStars = [];
-    $(this).find('star').each(function(){
-      lStars.push({"character":$(this).attr('character'), "name":$(this).text()});
+    $(this).find('star').each(function() {
+      lStars.push({
+        "character": $(this).attr('character'),
+        "name": $(this).text()
+      });
     });
-    serie.stars=lStars;
+    serie.stars = lStars;
 
     listSeries.push(serie);
   });
