@@ -37,7 +37,7 @@ function addCart() {
     let posterName = document.getElementById('txt-title').value;
     let posterCantidad = document.getElementById('txt-cantidad').value;
     let posterPrice = document.getElementById('txt-price').value;
-    
+
     posterObj.item.push({
       "name": posterName,
       "cantidad": posterCantidad,
